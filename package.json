@@ -1,22 +1,22 @@
 {
-  "name": "cordova-plugin-toastyplugin",
+  "name": "mic-cordova-plugin",
   "version": "0.0.1",
-  "description": "An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.",
+  "description": "An Android Cordova plugin that include media permissions for camera and mic usage.",
   "cordova": {
-    "id": "cordova-plugin-toastyplugin",
+    "id": "mic-cordova-plugin",
     "platforms": [
       "android"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+github.com:EdgarFabiano/ToastyPlugin.git"
+    "url": "git+github.com:EdgarFabiano/mic-cordova-plugin.git"
   },
   "keywords": [
-    "Toast",
-    "Notification",
-    "Message",
-    "Alert",
+    "Media",
+    "Mic",
+    "Camera",
+    "Permission",
     "ecosystem:cordova",
     "cordova-android"
   ],
@@ -29,7 +29,7 @@
   "author": "Edgar Fabiano",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com:EdgarFabiano/ToastyPlugin/issues"
+    "url": "https://github.com:EdgarFabiano/mic-cordova-plugin/issues"
   },
-  "homepage": "https://github.com:EdgarFabiano/ToastyPlugin/"
+  "homepage": "https://github.com:EdgarFabiano/mic-cordova-plugin/"
 }

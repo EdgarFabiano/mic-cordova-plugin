@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-toastyplugin" version="0.0.1">
-    <name>ToastyPlugin</name>
+        id="mic-cordova-plugin" version="0.0.1">
+    <name>MicPlugin</name>
 
-    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
+    <description>An Android Cordova plugin that include media permissions for camera and mic usage.</description>
     <license>MIT</license>
 
-    <keywords>cordova,android,toast,message,alert</keywords>
-    <repo>https://github.com:EdgarFabiano/ToastyPlugin.git</repo>
-    <issue>https://github.com/EdgarFabiano/ToastyPlugin/issues</issue>
+    <keywords>cordova,android,media,mic,camera,permissions</keywords>
+    <repo>https://github.com/EdgarFabiano/mic-cordova-plugin.git</repo>
   
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
   
-    <js-module src="www/toastyplugin.js" name="toastyPlugin">
-        <clobbers target="window.plugins.toastyPlugin" />
+    <js-module src="www/micplugin.js" name="micPlugin">
+        <clobbers target="window.plugins.micPlugin" />
     </js-module>
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="ToastyPlugin">
-                <param name="android-package" value="com.stanleyidesis.cordova.plugin.ToastyPlugin"/>
+            <feature name="MicPlugin">
+                <param name="android-package" value="com.stanleyidesis.cordova.plugin.MicPlugin"/>
             </feature>
         </config-file>
 
@@ -31,6 +30,6 @@
             <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> 
         </config-file>
 
-        <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/stanleyidesis/cordova/plugin" />
+        <source-file src="src/android/MicPlugin.java" target-dir="src/com/stanleyidesis/cordova/plugin" />
     </platform>
 </plugin>
