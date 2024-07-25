@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import android.content.pm.PackageManager;
+import android.Manifest;
 
 public class ToastyPlugin extends CordovaPlugin {
   private static final String DURATION_LONG = "long";
@@ -19,9 +20,9 @@ public class ToastyPlugin extends CordovaPlugin {
   public boolean execute(String action, JSONArray args,
     final CallbackContext callbackContext) {
       if (action.equals("request")) {
-        if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(),
-                new String[]{android.Manifest.permission.RECORD_AUDIO, android.Manifest.permission.CAMERA},
+                new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA},
                 REQUEST_MICROPHONE);
         }
         // Send a positive result to the callbackContext
