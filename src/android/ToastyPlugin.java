@@ -8,7 +8,7 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import android.content.pm.PackageManager;
@@ -23,7 +23,7 @@ public class ToastyPlugin extends CordovaPlugin {
         if (ContextCompat.checkSelfPermission(cordova.getActivity(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(cordova.getActivity(),
                 new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA},
-                REQUEST_MICROPHONE);
+                1);
         }
         // Send a positive result to the callbackContext
         PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
