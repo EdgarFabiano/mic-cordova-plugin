@@ -8,11 +8,27 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+
 public class ToastyPlugin extends CordovaPlugin {
   private static final String DURATION_LONG = "long";
   @Override
   public boolean execute(String action, JSONArray args,
     final CallbackContext callbackContext) {
+      if (action.equals("request")) {
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(),
+                new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA},
+                REQUEST_MICROPHONE);
+        }
+        // Send a positive result to the callbackContext
+        PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+        callbackContext.sendPluginResult(pluginResult);
+        return true;
+      }
+
       // Verify that the user sent a 'show' action
       if (!action.equals("show")) {
         callbackContext.error("\"" + action + "\" is not a recognized action.");
